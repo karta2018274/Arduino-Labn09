@@ -8,22 +8,15 @@ LiquidCrystal lcd(12, 11, 5,4,3,2);
 void setup() 
 {
   Serial.begin(9600);
-  pinMode(2,INPUT_PULLUP);
-  //attachInterrupt(0,int0,LOW);
-  
-    pinMode(6,INPUT_PULLUP);
-
+  pinMode(2,INPUT_PULLUP); 
+  pinMode(6,INPUT_PULLUP);
 }
 void loop() {
-  
-   
-    if (digitalRead(6) == HIGH)
+   if (digitalRead(6) == HIGH)
    noInterrupts();
-   //Serial.print(digitalRead(7));
   else
    interrupts();
-//Serial.print(digitalRead(7));
-  delay(1000);
+   delay(1000);
 float cmMsec, inMsec;
     long microsec = ultrasonic.timing();
     cmMsec = ultrasonic.convert(microsec, Ultrasonic::CM); // 計算距離，單位: 公分
@@ -37,5 +30,4 @@ float cmMsec, inMsec;
     lcd.print("CM: "); lcd.print(cmMsec);
     lcd.print(", IN: "); lcd.print(inMsec);
     delay(1000);
-
 }
