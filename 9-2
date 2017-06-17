@@ -15,12 +15,10 @@ void setup()
   lcd.print("hello, world!");
 }
 void loop() {
-
-
 }
+
 void int0()
 {
-
     float cmMsec, inMsec;
 long microsec = ultrasonic.timing();
 cmMsec = ultrasonic.convert(microsec, Ultrasonic::CM); // 計算距離，單位: 公分
@@ -34,5 +32,4 @@ lcd.setCursor (0,0);
   lcd.print ("IN:");
   lcd.print(inMsec);
   delay(900);
-  
 }
